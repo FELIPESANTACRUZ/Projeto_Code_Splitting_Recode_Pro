@@ -6,6 +6,7 @@ import './carregamento.css';
 //import Rodape from './code-splitting/Rodape';
 const Slogan = lazy(() => import('./code-splitting/Slogan'));
 const Rodape = lazy(() => import('./code-splitting/Rodape'));
+const Slogan2 = lazy(() => import('./code-splitting/Slogan2'));
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
         </Suspense>
 
         <Suspense fallback=
+        {<p>Atualizando..</p>}>
+        <Slogan2 />
+        </Suspense>
+
+        <Suspense fallback=
         {<p>Carregando...Aguarde</p>}>
         <Rodape />
         </Suspense>
@@ -30,8 +36,3 @@ function App() {
 }
 
 export default App;
-
-
-
-{/* <Suspense fallback={<img src='https://pa1.narvii.com/6898/0942d25fd0bc260c51d360ed1a328df5e57e1b5cr1-320-231_00.gif' />}> */}
-
